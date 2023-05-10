@@ -12,22 +12,21 @@
         <div class = "login-container">
             <h2> Login </h2>
             <form>
-                <div class="mb-3">
-                  <label for="user" class="form-label">User</label>
-                  <input type="text" class="form-control" id="user" aria-describedby="user">
-                  <div id="user" class="form-text">Ingresa tu usuario.</div>
-                </div>
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                <div class="form-floating mb-3">
+                    <input type="user" class="form-control" id="floatingInput" placeholder="userJuanexample">
+                    <label for="floatingInput">User</label>
+                  </div>
+                  <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                  </div>
+                  <div class="button-container">
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                  </div>
+                  
               </form>
         </div>
+        
 
 </body>
 </html>

@@ -6,39 +6,30 @@ body {
     background: linear-gradient(to bottom, #e66465, #9198e5);
 }
 .login-container {
-    width: 400px; /* Aumenta el ancho del contenedor */
+    width: 600px; /* Aumenta el ancho del contenedor */
     margin: 0 auto; /* Centra el contenedor horizontalmente */
-    margin-top: 200px; /* Ajusta la distancia desde la parte superior */
+    margin-top: 10px; /* Ajusta la distancia desde la parte superior */
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background: linear-gradient(to bottom, #4a90e2, #ffffff);
 
   }
+
+  h2 {
+    text-align: center;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /* Ajusta la altura según tus necesidades */
+  }
   
-  input[type="submit"] {
-    width: 100%;
-    padding: 8px;
-    background-color: #4caf50;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 3px;
-    transition: background-color 0.5s; /* Agrega una transición suave al cambio de color de fondo */
+  .btn {
+    /* Estilos adicionales para el botón */
   }
-
-  input[type="submit"]:hover {
-    background-color: purple;
-  }
-
-  .login-container {
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center; /* Centra el contenido horizontalmente */
-  }
+  
 
   
