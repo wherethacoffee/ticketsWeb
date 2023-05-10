@@ -15,23 +15,6 @@ body {
     background: linear-gradient(to bottom, #4a90e2, #ffffff);
 
   }
-
-h2 {
-    text-align: center;
-}
-
-label, input[type = "submit"] {
-    display: block;
-    margin-bottom: 10px;
-}
-
-input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
-    margin-bottom: 30px;
-  }
   
   input[type="submit"] {
     width: 100%;
@@ -57,3 +40,5 @@ input[type="text"], input[type="password"] {
     border-radius: 5px;
     text-align: center; /* Centra el contenido horizontalmente */
   }
+
+  
