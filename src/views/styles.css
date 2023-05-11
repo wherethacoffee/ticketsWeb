@@ -30,6 +30,48 @@ body {
   .btn {
     /* Estilos adicionales para el botón */
   }
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+ *{
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #151e3f;
+ } 
+
+:root {
+  --color: #17a2ff;
+
+}
+
+.contenedor {
+  display: flex;
+  height: 100vh;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.btn {
+  position: relative;
+  padding: 20px 50px;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 10px;
+}
+
+
+
+
+
   
+
+
+ 
 
   
