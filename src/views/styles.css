@@ -30,6 +30,17 @@ body {
   .btn {
     /* Estilos adicionales para el botón */
   }
+
+  .form-container {
+    width: 600px; /* Aumenta el ancho del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    margin-top: 10px; /* Ajusta la distancia desde la parte superior */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #4a90e2, #ffffff);
+
+  }
   
 
   
