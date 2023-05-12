@@ -16,11 +16,13 @@ app.set('views', path.join(__dirname, 'views'));
 
 //middlewares
 app.use(morgan('dev'));
+
+//IMPORTANTE: CAMBIAR LA CONTRASEÑA EN CASO DE SER NECESARIO PARA SU BDD
 app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root',
-    password: 'password',
-    database: 'admin'}, 'single')
+    password: 'admin',
+    database: 'ticketsdb'}, 'single')
 );
 
 app.use(express.urlencoded({extended: false}));
