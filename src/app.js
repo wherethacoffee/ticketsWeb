@@ -22,6 +22,7 @@ app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root',
     password: 'admin',
+    port: 3306,
     database: 'ticketsdb'}, 'single')
 );
 
