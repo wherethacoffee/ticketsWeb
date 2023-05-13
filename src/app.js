@@ -7,7 +7,9 @@ const myConnection = require('express-myconnection');
 const app = express();
 
 //importando rutas
-const myAppRoutes = require('./routes/myRoutes');
+const adminRoutes = require('./routes/adminRoutes');
+const alumnoRoutes = require('./routes/alumnoRoutes');
+const municipioRoutes = require('./routes/municipioRoutes');
 
 //Settings
 app.set('port', process.env.PORT || 3000);
@@ -29,7 +31,7 @@ app.use(myConnection(mysql, {
 app.use(express.urlencoded({extended: false}));
 
 //rutas
-app.use('/', myAppRoutes);
+app.use('/', alumnoRoutes);
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
