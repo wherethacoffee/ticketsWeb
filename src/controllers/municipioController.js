@@ -1,7 +1,7 @@
 const controller = {}
 
 controller.inicio = (req, res) => {
-    res.render('GestorAdmin')
+    res.render('GestorMunicipio')
 }
 
 controller.listar = (req, res) =>{

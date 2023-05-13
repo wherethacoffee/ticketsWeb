@@ -1,7 +1,10 @@
-const controller = {};
+const controller = {}
 
 controller.inicio = (req, res) => {
-    res.send("hola alumno");
-};
+    res.render('Agenda')
+}
+
+
+
 
 module.exports = controller;
