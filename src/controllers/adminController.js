@@ -34,13 +34,17 @@ controller.modificar = (req, res) => {
     const newAdmin = req.body;
 
     req.getConnection((err, conn) => {
-        conn.query('UPDATE admin SET ? WHERE idusuario = ?', [newAdmin, id], (err, rows) => {
         if (err) {
             res.json(err);
-        } else {
-            res.redirect('/')
+        } else{
+            conn.query('UPDATE admin SET ? WHERE idusuario = ?', [newAdmin, id], (err, rows) => {
+                if (err) {
+                    res.json(err);
+                } else {
+                    res.redirect('/')
+                }
+                });
         }
-    });
     });
 }
 
