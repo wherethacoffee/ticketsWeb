@@ -6,13 +6,29 @@ controller.inicio = (req, res) => {
 
 controller.listar = (req, res) =>{
     req.getConnection((err, conn) => {
-        conn.query('SELECT * FROM municipio', (err, municipio) => {
+        conn.query('SELECT * FROM municipio', (err, municipios) => {
         if(err){
             res.json(err);
         }
+        console.log(municipios);
         res.render('GestorMunicipio', {
-            data: municipio
+            data: municipios
         })
+        })
+    })
+}
+
+controller.save = (req, res) =>{
+    const data = req.body;  
+
+    req.getConnection((err, conn) => {
+        conn.query('INSERT INTO municipio set ?', [data] ,(err, municipio) =>{
+            if(err){
+                res.json(err);
+            }
+            console.log(data);
+            console.log(municipio);
+            res.send('works')
         })
     })
 }

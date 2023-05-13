@@ -19,11 +19,12 @@ app.set('views', path.join(__dirname, 'views'));
 //middlewares
 app.use(morgan('dev'));
 
+
 //IMPORTANTE: CAMBIAR LA CONTRASEÑA EN CASO DE SER NECESARIO PARA SU BDD
 app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root',
-    password: 'admin',
+    password: '',
     port: 3306,
     database: 'ticketsdb'}, 'single')
 );
@@ -31,7 +32,7 @@ app.use(myConnection(mysql, {
 app.use(express.urlencoded({extended: false}));
 
 //rutas
-app.use('/', alumnoRoutes);
+app.use('/', municipioRoutes);
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));

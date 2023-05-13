@@ -5,5 +5,6 @@ const municipioController = require('../controllers/municipioController');
 
 
 router.get('/', municipioController.inicio);
+router.post('/add', municipioController.save);
 
 module.exports = router;
