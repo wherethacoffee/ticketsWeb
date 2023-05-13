@@ -3,11 +3,11 @@ const router = express.Router();
 
 /* const alumnoController = require('../controllers/alumnoController');
  */
-/*const municipioController = require('../controllers/municipioController'); */
+const municipioController = require('../controllers/municipioController'); 
 
-const adminController = require('../controllers/adminController');
+//const adminController = require('../controllers/adminController');
 
 
-router.get('/', adminController.inicio);
+router.get('/', municipioController.inicio);
 
 module.exports = router;
