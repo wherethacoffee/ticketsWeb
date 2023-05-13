@@ -1,49 +1,47 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(to bottom, #e66465, #9198e5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #e66465, #9198e5);
 }
 .login-container {
-    width: 600px; /* Aumenta el ancho del contenedor */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-    margin-top: 10px; /* Ajusta la distancia desde la parte superior */
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: linear-gradient(to bottom, #4a90e2, #ffffff);
+  width: 600px; /* Aumenta el ancho del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  margin-top: 10px; /* Ajusta la distancia desde la parte superior */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: linear-gradient(to bottom, #4a90e2, #ffffff);
+}
 
-  }
+h2 {
+  text-align: center;
+}
 
-  h2 {
-    text-align: center;
-  }
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh; /* Ajusta la altura según tus necesidades */
+}
 
-  .button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh; /* Ajusta la altura según tus necesidades */
-  }
-
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
 /* <------- FrmAdminInicio -------->*/
 
- .contenedor{
+.contenedor {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   background-color: #151e3f;
   font-size: large;
- } 
+}
 
 :root {
   --color: #17a2ff;
-
 }
 
 .contenedor {
@@ -53,7 +51,6 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-
 }
 
 .btn {
@@ -87,13 +84,12 @@ body {
   border-radius: 0%;
 }
 
-
 /* <------- Agenda -------->*/
 .form-container {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,7 +97,6 @@ body {
   flex-direction: column;
   gap: 30px;
   background: #1d2b3a;
-  
 }
 
 .cuerpo-agenda {
@@ -134,22 +129,19 @@ body {
   padding: 5px;
   pointer-events: none;
   font-size: 1em;
-  color:rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.25);
   text-transform: uppercase;
   transition: 0.5s;
-
-
 }
 
 .inputBox input:valid ~ span,
-.inputBox input:focus ~ span
- {
+.inputBox input:focus ~ span {
   color: #00dfc4;
-  transform: translateX(10px) translateY(-40px); 
+  transform: translateX(10px) translateY(-40px);
   font-size: 0.65em;
   padding: 0px 10px;
   background: #1d2b3a;
-  border-left: 1px solid #00dfc4; 
+  border-left: 1px solid #00dfc4;
   border-right: 1px solid #00dfc4;
   letter-spacing: 0.2em;
 }
@@ -160,12 +152,10 @@ body {
   border-radius: 2px;
 }
 
-
 .inputBox input:valid,
 .inputBox input:focus {
   border: 1px solid #00dfc4;
 }
-
 
 /* <------- Agenda Combo box -------->*/
 
@@ -181,11 +171,11 @@ select {
   appearance: none;
   outline: 0;
   box-shadow: none;
-  border: 0!important;
+  border: 0 !important;
   background: #5c6664;
   background-image: none;
-  flex:1;
-  padding: 0 .5em;
+  flex: 1;
+  padding: 0 0.5em;
   color: #00dfc4;
   cursor: pointer;
   font-size: 1em;
@@ -203,11 +193,11 @@ select::-ms-expand {
   line-height: 3;
   background: #5c6664;
   overflow: hidden;
-  border-radius: .60em;
+  border-radius: 0.6em;
 }
 
 .select::after {
-  content: '\25BC';
+  content: "\25BC";
   position: absolute;
   top: 0;
   right: 0;
@@ -215,13 +205,11 @@ select::-ms-expand {
   background: #2b2e2e;
   cursor: pointer;
   pointer-events: none;
-  transition: .25s all ease;
-
+  transition: 0.25s all ease;
 }
 
 .select:hover::after {
   color: #fff;
-
 }
 
 /* <------- Agenda botones -------->*/
@@ -232,10 +220,7 @@ select::-ms-expand {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-
 }
-
-
 
 .btnMini {
   position: relative;
@@ -243,10 +228,9 @@ select::-ms-expand {
   text-decoration: none;
   color: #fff;
   letter-spacing: 5px;
-  
 }
 
-.btn-2{
+.btn-2 {
   border: 3px solid;
 }
 
@@ -255,7 +239,6 @@ select::-ms-expand {
   box-shadow: 0 0 20px var(--color);
   border-color: var(--color);
 }
-
 
 /* <------- Agenda header -------->*/
 
@@ -267,12 +250,10 @@ select::-ms-expand {
   height: 85px;
   padding: 5px 10%;
   border-radius: 20px;
-  font-family: 'Roboto', sans-serif;
-
+  font-family: "Roboto", sans-serif;
 }
 .header .logo {
   cursor: pointer;
-
 }
 
 .header .logo img {
@@ -298,18 +279,15 @@ select::-ms-expand {
   transform: scale(1.1);
 }
 
-.header .nav-link a{
+.header .nav-link a {
   font-size: 15px;
   color: #00dfc4;
   text-decoration: none;
-
 }
 
 .header .nav-link li a:hover {
   color: #03cc57;
-
 }
-
 
 .header .btn-cabeza button {
   font-weight: 700;
@@ -327,14 +305,3 @@ select::-ms-expand {
   color: #1d2b3a;
   transform: scale(1.1);
 }
-
-
-
-
-
-  
-
-
- 
-
-  
