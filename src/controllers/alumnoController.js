@@ -1,6 +1,6 @@
 const controller = {};
 
-controller.listar = (req, res) => {
+controller.inicio = (req, res) => {
     res.send("hola alumno");
 };
 
