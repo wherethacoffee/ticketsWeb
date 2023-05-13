@@ -20,17 +20,19 @@
                     <th>Acciones</th>
                 </thead>
                 <tbody>
-                        <% for (var i = 0; i < 5; i++) {%>
+                    <% if (data) {%>
+                        <% for (var i = 0; i < data.length; i++) {%>
                             <tr>
                                 <td> <%= (i + 1) %> </td>
-                                <td> Administrador </td>
-                                <td> 12345 </td>
+                                <td> <%= data[i].usuario %> </td>
+                                <td> <%= data[i].contrasena %> </td>
                                 <td> 
-                                    <a  class="btn btn-success" >UPDATE</a>
-                                    <a  class="btn btn-danger" >DELETE</a>
+                                    <a  href= "/update/<%= data[i].idusuario %>" class="btn btn-success" >EDITAR</a>
+                                    <a  href= "/delete/<%= data[i].idusuario %>" class="btn btn-danger" >ELIMINAR</a>
                                 </td>
                             </tr>
                         <% } %>
+                    <% } %>
                 </tbody>
             </table>
         </div>

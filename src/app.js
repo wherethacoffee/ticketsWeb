@@ -31,7 +31,7 @@ app.use(myConnection(mysql, {
 app.use(express.urlencoded({extended: false}));
 
 //rutas
-app.use('/', alumnoRoutes);
+app.use('/', adminRoutes);
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
