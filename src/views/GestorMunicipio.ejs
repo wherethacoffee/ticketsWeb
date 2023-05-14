@@ -2,53 +2,64 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>CRUD nodejs-mysql</title>
-        <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
+        <title>Gestor Municipio</title>
+        <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
     </head>
     <body>
-        <nav class="navbar navbar-dark bg-dark">
-            <a href="/" class="navbar-brand">Gestor Municipio</a>
-        </nav>
-<div class="container"> 
-    <div class="row mt-5">
-        <div class="col-md-7">
-            <table class="table table-bordered table-hover">
-                <thead>
-                    <th>N°</th>
-                    <th>Nombre</th>
-                    <th>Acciones</th>
-                </thead>
-                <tbody>
-                        <% for (var i = 0; i < 5; i++) {%>
-                            <tr>
-                                <td> <%= (i + 1) %> </td>
-                                <td> "municipio"</td>
-
-                                <td> 
-                                    <a  class="btn btn-info" >UPDATE</a>
-                                    <a  class="btn btn-danger" >DELETE</a>
-                                </td>
-                            </tr>
-                        <% } %>
-                </tbody>
-            </table>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a href="/" class="navbar-brand" style="margin-left: 20px;">Gestor de Municipios</a> 
+         </nav>
+         <div class="container"> 
+            <div class="row mt-5">
+                <div class="col-md-7">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <th>N°</th>
+                            <th>Nombre</th>
+                            <th>Acciones</th>
+                        </thead>
+                        <tbody>
+                                <% for (var i = 0; i < 5; i++) {%>
+                                    <tr>
+                                        <td> <%= (i + 1) %> </td>
+                                        <td> municipio</td>
+        
+                                        <td> 
+                                            <a  class="btn btn-success" >UPDATE</a>
+                                            <a  class="btn btn-danger" >DELETE</a>
+                                        </td>
+                                    </tr>
+                                <% } %>
+                        </tbody>
+                    </table>
+                </div>
 
         <div class="col-md-5">
+            <h2>Ingresa  un nuevo Municipio</h2>
             <div class="card">
-                <div class="card-body">
+                <div class ="card-body">
                     <form action="/add" method="POST">
                         <div class="form-group">
-                            <input type="text" name="nombre" placeholder="Nombre de municipio" class="form-control">
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            Guardar municipio
-                        </button>
+                            <label for="nombre" class="form-label mt-4">Nombre</label>
+                            <input type="text" name="nombre" class="form-control"  placeholder="Ingresa Municipio">
+                         </div>
+                    
+
+                             <button type="submit" class="btn btn-light btn-lg mt-5 mr-3">
+                                Guardar Municipio
+                            </button>
+
+                            <button type="reset" class="btn btn-light btn-lg mt-5 ml-3">
+                                limpiar
+                            </button>
                     </form>
                 </div>
             </div>
-        </div> 
+          </div>
     </div>
 </div>
+
 </body>
 </html>
+
+

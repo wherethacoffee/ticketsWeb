@@ -2,15 +2,15 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Tickets web</title>
-        <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
+        <title>Gestor Admin</title>
+        <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
     </head>
     <body>
-        <nav class="navbar navbar-dark bg-dark">
-            <a href="/" class="navbar-brand">Gestor Admin</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a href="/" class="navbar-brand" style="margin-left: 20px;">Gestor de Administradores</a> 
         </nav>
 <div class="container"> 
-    <div class="row mt-5">
+    <div class="row mt-5 ">
         <div class="col-md-7">
             <table class="table table-bordered table-hover">
                 <thead>
@@ -38,23 +38,34 @@
         </div>
 
         <div class="col-md-5">
+            <h2>Ingresa  un nuevo Administrador</h2>
             <div class="card">
-                <div class="card-body">
+                <div class ="card-body">
                     <form action="/add" method="POST">
                         <div class="form-group">
-                            <input type="text" name="usuario" placeholder="Usuario" class="form-control">
+                            <label for="usuario" class="form-label mt-4">Usuario</label>
+                            <input type="text" name="usuario" class="form-control"  placeholder="Ingresa usuario">
                         </div>
-                        <div class="form-group m-5">
-                            <input type="pwd" name="contrasena" placeholder="Contraseña" class="form-control">
+                        <div class="form-group">
+                            <label for="contrasena" class="form-label mt-4">Contraseña</label>
+                            <input type="password" name="contrasena" class="form-control" placeholder="Contraseña">
                         </div>
-                        <button type="submit" class="btn btn-primary" style="background-color: #FF5733;">
-                            Guardar usuario
-                        </button>
+
+                            <button type="submit" class="btn btn-light btn-lg mt-5 mr-3">
+                                Guardar usuario
+                            </button>
+
+                            <button type="reset" class="btn btn-light btn-lg mt-5 ml-3">
+                                limpiar
+                            </button>
                     </form>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 </div>
+
 </body>
 </html>
+
+
