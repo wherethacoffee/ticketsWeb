@@ -16,13 +16,14 @@
 <body>
     <div class="login-container">
     <h2>Login</h2>
-    <form>
+    <form action="/auth" method="POST">
         <div class="form-floating mb-3">
         <input
             type="user"
             class="form-control"
+            name="usuario"
             id="floatingInput"
-            placeholder="userJuanexample"
+            placeholder="Usuario"
         />
         <label for="floatingInput">User</label>
         </div>
@@ -30,8 +31,9 @@
         <input
             type="password"
             class="form-control"
+            name="contrasena"
             id="floatingPassword"
-            placeholder="Password"
+            placeholder="Contraseña"
         />
         <label for="floatingPassword">Password</label>
         </div>
@@ -40,5 +42,21 @@
         </div>
     </form>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <% if (typeof alert != "undefined")  { %>
+    <script>
+    Swal.fire({
+        title:'<%= alertTitle %>',
+        text:'<%= alertMessage %>',
+        icon:'<%= alertIcon %>',
+        showConfirmButton: false,
+        timer: '<%= timer %>'
+    }).then(()=>{
+        window.location='/<%= ruta %>'
+    })
+    </script>
+    <% } %>
+	</div>
 </body>
 </html>
