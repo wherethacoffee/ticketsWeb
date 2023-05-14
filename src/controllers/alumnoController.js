@@ -1,7 +1,7 @@
 const controller = {}
 
 controller.inicio = (req, res) => {
-    res.render('index')
+    res.render('AdminInicio')
 }
 
 

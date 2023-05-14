@@ -7,6 +7,7 @@ const myConnection = require('express-myconnection');
 const app = express();
 
 //importando rutas
+const indexRoutes = require('./routes/indexRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const alumnoRoutes = require('./routes/alumnoRoutes');
 const municipioRoutes = require('./routes/municipioRoutes');
@@ -23,7 +24,7 @@ app.use(morgan('dev'));
 app.use(myConnection(mysql, {
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: 'admin',
     port: 3306,
     database: 'ticketsdb'}, 'single')
 );
@@ -31,7 +32,7 @@ app.use(myConnection(mysql, {
 app.use(express.urlencoded({extended: false}));
 
 //rutas
-app.use('/', adminRoutes);
+app.use('/', indexRoutes);
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
