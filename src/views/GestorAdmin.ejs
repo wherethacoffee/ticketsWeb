@@ -27,8 +27,8 @@
                                 <td> <%= data[i].usuario %> </td>
                                 <td> <%= data[i].contrasena %> </td>
                                 <td> 
-                                    <a  href= "/update/<%= data[i].idusuario %>" class="btn btn-success" >EDITAR</a>
-                                    <a  href= "/delete/<%= data[i].idusuario %>" class="btn btn-danger" >ELIMINAR</a>
+                                    <a  href= "/CRUD_admin/update/<%= data[i].idusuario %>" class="btn btn-success" >EDITAR</a>
+                                    <a  href= "/CRUD_admin/delete/<%= data[i].idusuario %>" class="btn btn-danger" >ELIMINAR</a>
                                 </td>
                             </tr>
                         <% } %>
@@ -41,7 +41,7 @@
             <h2>Ingresa  un nuevo Administrador</h2>
             <div class="card">
                 <div class ="card-body">
-                    <form action="/add" method="POST">
+                    <form action="/CRUD_admin/add" method="POST">
                         <div class="form-group">
                             <label for="usuario" class="form-label mt-4">Usuario</label>
                             <input type="text" name="usuario" class="form-control"  placeholder="Ingresa usuario">
