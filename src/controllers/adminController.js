@@ -1,7 +1,7 @@
 const controller = {}
 
-controller.inicio = (req, res) => {
-    res.render('GestorAdmin')
+controller.iniciar = (req, res) => {
+    res.render('AdminInicio');
 }
 
 controller.agregar = (req, res) => {
@@ -12,7 +12,7 @@ controller.agregar = (req, res) => {
             if (err) {
                 res.json(err);
             } else {
-                res.redirect('/')
+                res.redirect('/admin')
             }
         });
     })
@@ -41,7 +41,7 @@ controller.modificar = (req, res) => {
                 if (err) {
                     res.json(err);
                 } else {
-                    res.redirect('/')
+                    res.redirect('/admin')
                 }
                 });
         }
@@ -56,7 +56,7 @@ controller.eliminar = (req, res) => {
             if (err) {
                 res.json(err);
             } else {
-                res.redirect('/');
+                res.redirect('/admin');
             }
         });
     })
