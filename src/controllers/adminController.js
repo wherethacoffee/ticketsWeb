@@ -1,9 +1,5 @@
 const controller = {}
 
-controller.iniciar = (req, res) => {
-    res.render('AdminInicio');
-}
-
 controller.agregar = (req, res) => {
     const data = req.body;
 
@@ -12,7 +8,7 @@ controller.agregar = (req, res) => {
             if (err) {
                 res.json(err);
             } else {
-                res.redirect('/admin')
+                res.redirect('/CRUD_admin')
             }
         });
     })
@@ -41,7 +37,7 @@ controller.modificar = (req, res) => {
                 if (err) {
                     res.json(err);
                 } else {
-                    res.redirect('/admin')
+                    res.redirect('/CRUD_admin')
                 }
                 });
         }
@@ -56,7 +52,7 @@ controller.eliminar = (req, res) => {
             if (err) {
                 res.json(err);
             } else {
-                res.redirect('/admin');
+                res.redirect('/CRUD_admin');
             }
         });
     })
@@ -73,6 +69,26 @@ controller.listar = (req, res) => {
             });
         });
     })
+}
+
+//metodos para los agendados desde la vista de admin
+controller.listarAgendados = (req, res) => {
+    req.getConnection((err, conn) => {
+        conn.query("SELECT alumno.*, municipio.nombremunicipio FROM alumno "+
+        "INNER JOIN municipio ON alumno.idmunicipio = municipio.idmunicipio", (err, agendados) => {
+            if (err) {
+                res.json(err);
+            } else {
+                res.render('Agendar', {
+                    data: agendados
+                })
+            }
+        })
+    });
+}
+
+controller.actualizarStatus = (req, res) => {
+    
 }
 
 

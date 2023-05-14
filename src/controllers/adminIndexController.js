@@ -6,7 +6,7 @@ controller.iniciar = (req, res) => {
 }
 
 controller.toAgenda = (req, res) => {
-    res.render('Agendar')
+    res.redirect('/CRUD_admin/listarAgendados')
 }
 
 controller.toMunicipio_CRUD = (req, res) => {
@@ -14,7 +14,7 @@ controller.toMunicipio_CRUD = (req, res) => {
 }
 
 controller.toAdmin_CRUD = (req, res) => {
-    res.render('GestorAdmin')
+    res.redirect('/CRUD_admin/listar')
 }
 
 controller.graficaStatus = (req, res) => {
