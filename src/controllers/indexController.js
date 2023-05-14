@@ -1,7 +1,7 @@
 const controller = {}
 
 controller.iniciar = (req, res) => {
-    res.render('index')
+    res.render('Agenda')
 }
 
 
