@@ -61,12 +61,30 @@ controller.agregar = (req, res) => {
     })
 }
 
+controller.listarCitas = (req, res) => {
+    const { curp } = req.params;
+    console.log(curp);
+
+    req.getConnection((err, conn) => {
+        conn.query('SELECT * FROM alumno WHERE curp = ?', [curp], (err, citas) => {
+            if (err) {
+                res.json(err);
+            }
+            res.render('citaAgendada', {
+                data: citas
+            });
+        });
+    })
+}
+
 
 function validarCURP(curp) {
     // Expresión regular para validar una CURP
-    const curpRegex = /^[A-Z]{4}[0-9]{6}[HM][A-Z]{5}[0-9]{2}$/;
+    const curpRegex = /^[A-Z]{4}[0-9]{6}[HM][A-Z]{5}[A-Za-z0-9]{2}$/;
     return curpRegex.test(curp);
 
 }
+
+
 
 module.exports = controller;

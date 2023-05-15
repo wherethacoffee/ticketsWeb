@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Citas agendadas</title>
+        <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a href="/" class="navbar-brand" style="margin-left: 20px;">Citas agendadas</a> 
+        </nav>
+<div class="container"> 
+    <div class="row mt-5 ">
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <th>N°</th>
+                    <th>CURP</th>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Nivel</th>
+                    <th>Asunto</th>
+                    <th>Turno</th>
+                    <th>Status</th>
+                    <th>Municipio</th>
+                    <th>Acciones</th>
+                </thead>
+                <tbody>
+                    <% if (data) {%>
+                        <% for (var i = 0; i < data.length; i++) {%>
+                            <tr>
+                                <td> <%= (i + 1) %> </td>
+                                <td> <%= data[i].curp %> </td>
+                                <td> <%= data[i].nombre %> </td>
+                                <td> <%= data[i].paterno %> </td>
+                                <td> <%= data[i].materno %> </td>
+                                <td> <%= data[i].telefono %> </td>
+                                <td> <%= data[i].correo %> </td>
+                                <td> <%= data[i].nivel %> </td>
+                                <td> <%= data[i].asunto %> </td>
+                                <td> <%= data[i].turno %> </td>
+                                <td> <%= data[i].status %> </td>
+                                <td> <%= data[i].nombremunicipio %> </td>
+                                <td> 
+                                    <a  href= "/CRUD_admin/actualizarStatus/<%= data[i].curp %>" class="btn btn-success" >ACTUALIZAR STATUS</a>
+                                </td>
+                            </tr>
+                        <% } %>
+                    <% } else {%>
+                        <h1>Sin datos</h1>
+                    <% } %>  
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>
+    
