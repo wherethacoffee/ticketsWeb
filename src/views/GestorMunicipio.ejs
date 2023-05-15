@@ -2,16 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>CRUD nodejs-mysql</title>
+    <title>Gestor de municipios</title>
     <link
       rel="stylesheet"
-      href="https://bootswatch.com/5/flatly/bootstrap.min.css"
+      href="https://bootswatch.com/5/vapor/bootstrap.min.css"
     />
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark">
-      <a href="/" class="navbar-brand">Gestor Municipio</a>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a href="/" class="navbar-brand" style="margin-left: 20px;">Gestor de Municipios</a> 
+  </nav>
     <div class="container">
       <div class="row mt-5">
         <div class="col-md-7">
@@ -28,8 +28,8 @@
                             <td> <%= (i + 1) %> </td>
                             <td> <%= data[i].nombremunicipio %> </td>
                             <td> 
-                                <a  href= "" class="btn btn-success" >EDITAR</a>
-                                <a  href= "/municipio/delete/<%= data[i].idmunicipio %>" class="btn btn-danger" >ELIMINAR</a>
+                                <a  href= "/municipio/update/<%= data[i].idmunicipio %>" class="btn btn-outline-success" >EDITAR</a>
+                                <a  href= "/municipio/delete/<%= data[i].idmunicipio %>" class="btn btn-outline-danger" >ELIMINAR</a>
                             </td>
                         </tr>
                     <% } %>
@@ -39,20 +39,24 @@
         </div>
 
         <div class="col-md-5">
+          <h1>Ingresa  un nuevo municipio</h1>
           <div class="card">
             <div class="card-body">
               <form action="/municipio/add" method="POST">
                 <div class="form-group">
-                  <input
-                    type="text"
-                    name="nombremunicipio"
-                    placeholder="Nombre de municipio"
-                    class="form-control"
-                  />
+                  <label for="usuario" class="form-label mt-4">Usuario</label>
+                  <input type="text" name="nombremunicipio" placeholder="Nombre de municipio" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-primary">
+                <button type="reset" class="btn btn-outline-light btn-lg mt-5">
                   Guardar municipio
                 </button>
+
+                <button type="reset" class="btn btn-outline-light btn-lg mt-5 mx-3">
+                  limpiar
+              </button>
+
+              <a href="/admin/inicio" class = "btn btn-outline-secondary btn-lg mt-5 mx-3">regresar</a>
+
               </form>
             </div>
           </div>
