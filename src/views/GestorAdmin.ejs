@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Gestor Admin</title>
+        <title>Gestor de administradores</title>
         <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
     </head>
     <body>
@@ -27,8 +27,8 @@
                                 <td> <%= data[i].usuario %> </td>
                                 <td> <%= data[i].contrasena %> </td>
                                 <td> 
-                                    <a  href= "/CRUD_admin/update/<%= data[i].idusuario %>" class="btn btn-success" >EDITAR</a>
-                                    <a  href= "/CRUD_admin/delete/<%= data[i].idusuario %>" class="btn btn-danger" >ELIMINAR</a>
+                                    <a  href= "/CRUD_admin/update/<%= data[i].idusuario %>" class="btn btn-outline-success mx-2" >EDITAR</a>
+                                    <a  href= "/CRUD_admin/delete/<%= data[i].idusuario %>" class="btn btn-outline-danger" >ELIMINAR</a>
                                 </td>
                             </tr>
                         <% } %>
@@ -38,7 +38,7 @@
         </div>
 
         <div class="col-md-5">
-            <h2>Ingresa  un nuevo Administrador</h2>
+            <h1>Ingresa  un nuevo administrador</h1>
             <div class="card">
                 <div class ="card-body">
                     <form action="/CRUD_admin/add" method="POST">
@@ -51,13 +51,15 @@
                             <input type="password" name="contrasena" class="form-control" placeholder="Contraseña">
                         </div>
 
-                            <button type="submit" class="btn btn-light btn-lg mt-5 mr-3">
+                            <button type="submit" class="btn btn-outline-light btn-lg mt-5">
                                 Guardar usuario
                             </button>
 
-                            <button type="reset" class="btn btn-light btn-lg mt-5 ml-3">
+                            <button type="reset" class="btn btn-outline-light btn-lg mt-5 mx-3">
                                 limpiar
                             </button>
+
+                            <a href="/admin/inicio" class = "btn btn-outline-secondary btn-lg mt-5 mx-3">regresar</a>
                     </form>
                 </div>
             </div>

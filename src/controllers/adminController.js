@@ -120,5 +120,68 @@ controller.eliminarAgendado = (req, res) => {
 }
 
 
+//Rellenado de graficas con datos
+
+controller.listarStatusTotales = (req, res) => {
+    req.getConnection((err, conn) => {
+        conn.query("SELECT * FROM status_total", (err, status) => {
+            if (err) {
+                res.json(err);
+            } else {
+                const labels = [];
+                const data = [];
+
+                status.forEach((status) => {
+                    labels.push(status.status);
+                    data.push(status.total);
+                });
+
+                res.render('graficaTotal', {
+                    labels: labels,
+                    data: data
+                })
+            }
+        })
+    });
+}
+
+controller.listarMunicipios = (req, res) =>{
+    req.getConnection((err, conn) => {
+        conn.query('SELECT * FROM municipio', (err, municipios) => {
+        if(err){
+            res.json(err);
+        }
+        console.log(municipios)
+        res.render('selectMunicipio', {
+            data: municipios
+        })
+        })
+    })
+}
+
+controller.graficarStatusMunicipio = (req, res) => {
+    const { nombremunicipio } = req.query
+    req.getConnection((err, conn) => {
+        conn.query("SELECT * FROM status_municipio WHERE nombremunicipio= ?", [nombremunicipio],(err, status) => {
+            if (err) {
+                res.json(err);
+            } else {
+                const labels = [];
+                const datos = [];
+
+                status.forEach((status) => {
+                    labels.push(status.status);
+                    datos.push(status.total);
+                });
+
+                res.render('graficaMunicipio', {
+                    labels: labels,
+                    data: datos
+                })
+            }
+        })
+    });
+}
+
 
 module.exports = controller;
