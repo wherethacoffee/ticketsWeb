@@ -18,11 +18,11 @@ controller.toAdmin_CRUD = (req, res) => {
 }
 
 controller.graficaStatus = (req, res) => {
-    res.send("Aqui va la grafica del status de todos las citas")
+    res.render('graficaTotal')
 }
 
 controller.graficaMunicipio = (req, res) => {
-    res.send("Aqui va la grafica del status de las citas por municipio")
+    res.render('graficaMunicipio')
 }
 
 controller.logout = (req, res) => {
