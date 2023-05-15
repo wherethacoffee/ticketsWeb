@@ -12,6 +12,20 @@ controller.toAgendar = (req, res) => {
     res.redirect('/alumno/inicio');
 }
 
+controller.toVerEstado = (req, res) => {
+    res.render('inCurp')
+}
+
+controller.validarCURP = (req, res) => {
+    const { curp } = req.body;
+
+    if (validarCURP(curp)) {
+        res.redirect('/alumno/listarCitas/'+curp)
+    } else {
+        res.send('error');
+    }
+};
+
 controller.auth = (req, res) => {
     const usuario = req.body.usuario;
     const contrasena = req.body.contrasena;
@@ -49,6 +63,12 @@ controller.auth = (req, res) => {
     } else {
         res.send("Digite los campos vacios")
     }
+}
+
+function validarCURP(curp) {
+    // Expresión regular para validar una CURP
+    const curpRegex = /^[A-Z]{4}[0-9]{6}[HM][A-Z]{5}[A-Za-z0-9]{2}$/;
+    return curpRegex.test(curp);
 }
 
 module.exports = controller;
