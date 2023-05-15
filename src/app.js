@@ -40,7 +40,11 @@ app.use(session({
     saveUninitialized: true
 }));
 //rutas
-app.use('/', alumnoRoutes);
+app.use('/', indexRoutes);
+app.use('/admin', adminIndexRoutes);    
+app.use('/municipio', municipioRoutes);
+app.use('/alumno', alumnoRoutes);
+app.use('/CRUD_admin', adminRoutes);
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));

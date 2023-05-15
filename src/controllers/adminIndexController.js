@@ -10,7 +10,7 @@ controller.toAgenda = (req, res) => {
 }
 
 controller.toMunicipio_CRUD = (req, res) => {
-    res.render('GestorMunicipio')
+    res.redirect('/municipio/listar')
 }
 
 controller.toAdmin_CRUD = (req, res) => {
