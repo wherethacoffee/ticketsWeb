@@ -1,13 +1,16 @@
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
+const session = require('express-session');
 const mysql = require('mysql');	
 const myConnection = require('express-myconnection');
 
 const app = express();
 
 //importando rutas
+const indexRoutes = require('./routes/indexRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const adminIndexRoutes = require('./routes/adminIndexRoutes');
 const alumnoRoutes = require('./routes/alumnoRoutes');
 const municipioRoutes = require('./routes/municipioRoutes');
 
@@ -31,8 +34,13 @@ app.use(myConnection(mysql, {
 
 app.use(express.urlencoded({extended: false}));
 
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
 //rutas
-app.use('/', municipioRoutes);
+app.use('/', alumnoRoutes);
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));
