@@ -3,7 +3,8 @@ const router = express.Router();
 
 const alumnoController = require('../controllers/alumnoController');
 
+router.get('/inicio', alumnoController.inicio);
+router.post('/add', alumnoController.agregar);
 
-router.get('/', alumnoController.inicio);
 
 module.exports = router;

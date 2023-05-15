@@ -17,7 +17,7 @@
             <h1>Ingresa tus datos</h1>
             <div class="card">
                 <div class ="card-body">
-                    <form action="/add" method="POST">
+                    <form action="/alumno/add" method="POST">
                         <div class="form-group">
                             <label for="curp" class="form-label mt-4">Curp</label>
                             <input type="text" name="curp" class="form-control"  placeholder="Ingresa CURP">
@@ -45,17 +45,17 @@
 
                         <div class="form-group">
                             <label for="correo" class="form-label mt-4">correo</label>
-                            <input type="mail" name="correo" class="form-control" placeholder="ingresa Correo">
+                            <input type="text" name="correo" class="form-control" placeholder="ingresa Correo">
                         </div>
 
                         <div class="form-group">
                             <label for="status" class="form-label mt-4">Status</label>
-                            <input type="text" name="correo" class="form-control" placeholder="status">
+                            <input type="text" name="status" class="form-control" placeholder="status">
                         </div>
 
                         <div class="form-group">
                             <label for="nivel" class="form-label mt-4">Nivel</label>
-                            <select class="form-select" id="Nivel">
+                            <select class="form-select" name="nivel" id="nivel">
                                 <option>Seleccione</option>
                                 <option>Primaria</option>
                                 <option>Secundaria</option>
@@ -64,7 +64,7 @@
 
                         <div class="form-group">
                         <label for="asunto" class="form-label mt-4">Asunto</label>
-                        <select class="form-select" id="asunto">
+                        <select class="form-select" name="asunto" id="asunto">
                             <option>Seleccione</option>
                             <option>Entrega de papeleria</option>
                             <option>solicitud de cita</option>
@@ -73,10 +73,12 @@
 
                 <div class="form-group">
                     <label for="municipio" class="form-label mt-4">Municipio</label>
-                    <select class="form-select" id="municipio">
-                        <option>Seleccione</option>
-                        <option>Arteaga</option>
-                        <option>Saltillo</option>
+                    <select class="form-select" id="idmunicipio" name="idmunicipio">
+                        <% if (data) { %>
+                            <% for (var i = 0; i < data.length; i++) { %>
+                                <option value = "<%= data[i].id %>"> <%= data[i].nombremunicipio %> </option>
+                            <% } %>
+                        <% } %>
                     </select>
                 </div>
 
@@ -85,18 +87,31 @@
                             </button>
 
                             <button type="submit" class="btn btn-light btn-lg mt-5 mr-3">
-                                modificar 
+                                Modificar 
                             </button>
 
                             <button type="reset" class="btn btn-light btn-lg mt-5 ml-3">
                                 limpiar
-                            </button>
+                            </button>   
                     </form>
                 </div>
+                <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <% if (typeof alert != "undefined")  { %>
+    <script>
+    Swal.fire({
+        title:'<%= alertTitle %>',
+        text:'<%= alertMessage %>',
+        icon:'<%= alertIcon %>',
+        showConfirmButton: false,
+        timer: '<%= timer %>'
+    }).then(()=>{
+        window.location='/<%= ruta %>'
+    })
+    </script>
+    <% } %>
             </div>
         </div>
     </div>
-
-    
 </body>
 </html>

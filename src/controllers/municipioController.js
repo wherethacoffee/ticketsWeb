@@ -10,7 +10,7 @@ controller.listar = (req, res) =>{
         if(err){
             res.json(err);
         }
-        console.log(municipios)
+        /* console.log(municipios) */
         res.render('GestorMunicipio', {
             data: municipios
         })
@@ -43,6 +43,36 @@ controller.eliminar = (req, res) => {
             }
         });
     })
+}
+
+controller.editar = (req, res) => {
+    const { id } = req.params;
+    req.getConnection((err, conn) => {
+        conn.query('SELECT * FROM municipio WHERE idmunicipio = ?', [id], (err, municipio) => {
+            res.render('municipioEditar', {
+                data: municipio[0]
+            })
+        });
+    })
+}
+
+controller.modificar = (req, res) => {
+    const { id } = req.params;
+    const newMunicipio = req.body;
+
+    req.getConnection((err, conn) => {
+        if (err) {
+            res.json(err);
+        } else{
+            conn.query('UPDATE municipio SET ? WHERE idmunicipio = ?', [newMunicipio, id], (err, rows) => {
+                if (err) {
+                    res.json(err);
+                } else {
+                    res.redirect('/municipio/listar')
+                }
+                });
+        }
+    });
 }
 
 

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tickets web</title>
+        <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <a href="../" class="navbar-brand">Gestor Municipio</a>
+        </nav>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5 offset-md-3 card bg-dark">
+            <div class="card-body">
+                <form action="/municipio/update/<%= data.idmunicipio %>" method="post">
+                    <input
+                    type="text"
+                    name="nombremunicipio"
+                    value="<%= data.nombremunicipio %>"
+                    placeholder="Municipio"
+                    class="form-control mb-3"
+                    autofocus
+                    />
+                    <button type="submit" class="btn btn-primary">Guardar Municipio</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

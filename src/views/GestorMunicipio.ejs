@@ -28,7 +28,7 @@
                             <td> <%= (i + 1) %> </td>
                             <td> <%= data[i].nombremunicipio %> </td>
                             <td> 
-                                <a  href= "" class="btn btn-success" >EDITAR</a>
+                                <a  href= "/municipio/update/<%= data[i].idmunicipio %>" class="btn btn-success" >EDITAR</a>
                                 <a  href= "/municipio/delete/<%= data[i].idmunicipio %>" class="btn btn-danger" >ELIMINAR</a>
                             </td>
                         </tr>
