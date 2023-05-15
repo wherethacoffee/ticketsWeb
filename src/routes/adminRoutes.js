@@ -13,4 +13,8 @@ router.post('/update/:id', adminController.modificar);
 router.get('/listarAgendados', adminController.listarAgendados);
 router.get('/actualizarStatus/:curp', adminController.actualizarStatus);
 
+//Rutas para las graficas
+router.get('/listarTotal', adminController.listarStatusTotales);
+router.get('/listarMunicipio', adminController.listarMunicipios);
+router.get('/graficarMunicipios', adminController.graficarStatusMunicipio);
 module.exports = router;

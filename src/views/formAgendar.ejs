@@ -74,12 +74,13 @@
                 <div class="form-group">
                     <label for="municipio" class="form-label mt-4">Municipio</label>
                     <select class="form-select" id="municipio">
-                        <option>Seleccione</option>
-                        <option>Arteaga</option>
-                        <option>Saltillo</option>
+                        <%= if (data) { %>
+                            <%= for (var i = 0; i < data.length; i++) { %>
+                                <option> <%= data[i].nombremunicipio %> </option>
+                            <% } %>
+                        <% } %>
                     </select>
                 </div>
-
                             <button type="submit" class="btn btn-light btn-lg mt-5 mr-3">
                                 Guardar 
                             </button>
