@@ -76,7 +76,7 @@
                     <select class="form-select" id="idmunicipio" name="idmunicipio">
                         <% if (data) { %>
                             <% for (var i = 0; i < data.length; i++) { %>
-                                <option value = '<%= i++ %>'> <%= data[i].nombremunicipio %> </option>
+                                <option value = '<%= data[i].idmunicipio %>'> <%= data[i].nombremunicipio %> </option>
                             <% } %>
                         <% } %>
                     </select>
