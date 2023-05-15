@@ -9,7 +9,7 @@ controller.toLogin = (req, res) => {
 }
 
 controller.toAgendar = (req, res) => {
-    res.render('formAgendar');
+    res.redirect('/alumno/inicio');
 }
 
 controller.auth = (req, res) => {

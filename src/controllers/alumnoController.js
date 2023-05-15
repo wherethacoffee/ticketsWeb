@@ -1,7 +1,16 @@
 const controller = {}
 
 controller.inicio = (req, res) => {
-    res.render('formAgendar')
+    req.getConnection((err, conn) => {
+        conn.query('SELECT * FROM municipio', (err, admins) => {
+            if (err) {
+                res.json(err);
+            }
+            res.render('formAgendar', {
+                data: admins
+            });
+        });
+    })
 }
 
 controller.agregar = (req, res) => {
@@ -9,16 +18,7 @@ controller.agregar = (req, res) => {
     
     // Validar la CURP antes de insertarla en la base de datos
     if (!validarCURP(data.curp)) {
-        res.render('formAgendar', {
-            alert: true,
-            alertTitle: 'ERROR',
-            alertMessage: 'CURP NO VALIDA',
-            alertIcon: 'error',
-            timer: 1500,
-            ruta: 'alumno/inicio'
-
-        })
-    return;
+        res.redirect('alumno/inicio')
     }
 
     req.getConnection((err, conn) => {
@@ -26,16 +26,7 @@ controller.agregar = (req, res) => {
             if (err) {
                 res.json(err);
             } else {
-                res.render('formAgendar', {
-                    alert: true,
-                    alertTitle: 'EXITO',
-                    alertMessage: 'REGISTRO COMPLETADO',
-                    alertIcon: 'success',
-                    showconfirmationbutton: false,
-                    timer: 1500,
-                    ruta: 'alumno/inicio'
-                }
-        )}
+                res.redirect('alumno/inicio')}
         });
     })
 }
@@ -46,8 +37,5 @@ function validarCURP(curp) {
     const curpRegex = /^[A-Z]{4}[0-9]{6}[HM][A-Z]{5}[0-9]{2}$/;
     return curpRegex.test(curp);
 }
-
-
-
 
 module.exports = controller;
