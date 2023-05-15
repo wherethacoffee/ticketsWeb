@@ -55,7 +55,7 @@ controller.agregar = (req, res) => {
     if (err) {
         res.json(err);
     } else {
-        res.redirect('/alumno/inicio')
+        res.redirect('/ticket/inicio/' + data.curp);
     }
 });
     })
