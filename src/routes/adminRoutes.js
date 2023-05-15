@@ -11,5 +11,6 @@ router.post('/update/:id', adminController.modificar);
 
 //Rutas para los agendados
 router.get('/listarAgendados', adminController.listarAgendados);
+router.get('/actualizarStatus/:curp', adminController.actualizarStatus);
 
 module.exports = router;

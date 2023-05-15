@@ -9,7 +9,7 @@ controller.toLogin = (req, res) => {
 }
 
 controller.toAgendar = (req, res) => {
-    res.render('Agendar');
+    res.render('formAgendar');
 }
 
 controller.auth = (req, res) => {

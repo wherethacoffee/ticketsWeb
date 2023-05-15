@@ -8,7 +8,7 @@ controller.agregar = (req, res) => {
             if (err) {
                 res.json(err);
             } else {
-                res.redirect('/CRUD_admin')
+                res.redirect('/CRUD_admin/listar')
             }
         });
     })
@@ -37,7 +37,7 @@ controller.modificar = (req, res) => {
                 if (err) {
                     res.json(err);
                 } else {
-                    res.redirect('/CRUD_admin')
+                    res.redirect('/CRUD_admin/listar')
                 }
                 });
         }
@@ -52,7 +52,7 @@ controller.eliminar = (req, res) => {
             if (err) {
                 res.json(err);
             } else {
-                res.redirect('/CRUD_admin');
+                res.redirect('/CRUD_admin/listar');
             }
         });
     })
@@ -88,7 +88,35 @@ controller.listarAgendados = (req, res) => {
 }
 
 controller.actualizarStatus = (req, res) => {
-    
+    const { curp } = req.params;
+
+    req.getConnection((err, conn) => {
+        if (err) {
+            res.json(err);
+        } else {
+            conn.query('UPDATE alumno SET Status = ? WHERE curp = ?', ['Realizado', curp], (err, rows) => {
+                if (err) {
+                    res.json(err);
+                } else {
+                    res.redirect('/CRUD_admin/listarAgendados')
+                }
+            });
+        }
+    });
+}
+
+controller.eliminarAgendado = (req, res) => {
+    const { curp } = req.params;
+
+    req.getConnection((err, conn) => {
+        conn.query('DELETE FROM admin WHERE idusuario = ?', [curp], (err, rows) => {
+            if (err) {
+                res.json(err);
+            } else {
+                res.redirect('/CRUD_admin/listarAgendados')
+            }
+        });
+    })
 }
 
 
