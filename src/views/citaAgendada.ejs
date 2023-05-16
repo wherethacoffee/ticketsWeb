@@ -43,15 +43,17 @@
                                 <td> <%= data[i].asunto %> </td>
                                 <td> <%= data[i].turno %> </td>
                                 <td> <%= data[i].status %> </td>
-                                <td> <%= data[i].nombremunicipio %> </td>
+                                <td> <%= data[i].nombre_municipio %> </td>
                                 <td> 
-                                    <a  href= "/CRUD_admin/actualizarStatus/<%= data[i].curp %>" class="btn btn-success" >ACTUALIZAR STATUS</a>
+                                    <a  href= "/CRUD_admin/actualizar/<%= data[i].curp %>" class="btn btn-success" >ACTUALIZAR STATUS</a>
                                 </td>
                             </tr>
                         <% } %>
                     <% } else {%>
                         <h1>Sin datos</h1>
                     <% } %>  
+                    <a  href= "/toCurp" class="btn btn-outline-secondary btn-lg mt-5 mx-3" >REGRESAR</a>
+
                 </tbody>
             </table>
         </div>

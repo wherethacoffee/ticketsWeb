@@ -13,11 +13,11 @@
     <div class="row">
         <div class="col-md-5 offset-md-3 card bg-dark">
             <div class="card-body">
-                <form action="/CRUD_admin/update/<%= data.curp %>" method="post">
+                <form action="/CRUD_admin/updateall" method="post">
                     <input
                     type="text"
                     name="curp"
-                    value="<%= data.curp %>"
+                    value= '<%= resultado.curp %>'
                     placeholder="CURP"
                     class="form-control mb-3"
                     autofocus
@@ -25,14 +25,14 @@
                     <input
                     type="text"
                     name="nombre"
-                    value="<%= data.nombre %>"
+                    value="<%= resultado.nombre %>"
                     placeholder="Nombre"
                     class="form-control mb-3"
                     />
                     <input
                     type="text"
                     name="paterno"
-                    value="<%= data.paterno %>"
+                    value="<%= resultado.paterno %>"
                     placeholder="Paterno"
                     class="form-control mb-3"
                     autofocus
@@ -40,7 +40,7 @@
                     <input
                     type="text"
                     name="materno"
-                    value="<%= data.materno %>"
+                    value="<%= resultado.materno %>"
                     placeholder="Materno"
                     class="form-control mb-3"
                     autofocus
@@ -48,7 +48,7 @@
                     <input
                     type="text"
                     name="telefono"
-                    value="<%= data.telefono %>"
+                    value="<%= resultado.telefono %>"
                     placeholder="Telefono"
                     class="form-control mb-3"
                     autofocus
@@ -56,22 +56,14 @@
                     <input
                     type="text"
                     name="correo"
-                    value="<%= data.correo %>"
+                    value="<%= resultado.correo %>"
                     placeholder="Correo"
-                    class="form-control mb-3"
-                    autofocus
-                    />
-                    <input
-                    type="text"
-                    name="nivel"
-                    value="<%= data.nivel %>"
-                    placeholder="Nivel"
                     class="form-control mb-3"
                     autofocus
                     />
                     <label for="nivel" class="form-label mt-4">Nivel</label>
                         <select class="form-select" name="nivel" id="nivel">
-                            <option>Seleccione</option>
+                            <option>Seleccion</option>
                             <option>Primaria</option>
                             <option>Secundaria</option>
                         </select>
@@ -79,13 +71,11 @@
                         <select class="form-select" name="asunto" id="asunto">
                             <option>Seleccione</option>
                             <option>Entrega de papeleria</option>
-                            <option>solicitud de cita</option>
+                            <option>Solicitud de cita</option>
                         </select>
-                    <label for="asunto" class="form-label mt-4">Asunto</label>
-                        <select class="form-select" name="asunto" id="asunto">
-                            <option>Seleccione</option>
-                            <option>Entrega de papeleria</option>
-                            <option>solicitud de cita</option>
+                    <label for="idmunicipio" class="form-label mt-4">Municipio</label>
+                        <select class="form-select" name="idmunicipio" id="idmunicio">
+                            <option value="<%= resultado.idmunicipio %>"><%= resultado.nombremunicipio %></option>
                         </select>
                     <button type="submit" class="btn btn-primary">Guardar Usuario</button>
                 </form>

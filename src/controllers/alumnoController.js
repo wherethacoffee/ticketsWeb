@@ -66,7 +66,8 @@ controller.listarCitas = (req, res) => {
     console.log(curp);
 
     req.getConnection((err, conn) => {
-        conn.query('SELECT * FROM alumno WHERE curp = ?', [curp], (err, citas) => {
+        conn.query('SELECT alumno.*, municipio.nombremunicipio as nombre_municipio FROM alumno '+
+        'JOIN municipio ON alumno.idmunicipio = municipio.idmunicipio WHERE curp = ?', [curp], (err, citas) => {
             if (err) {
                 res.json(err);
             }

@@ -46,10 +46,12 @@
                                 <td> <%= data[i].nombremunicipio %> </td>
                                 <td> 
                                     <a  href= "/CRUD_admin/actualizarStatus/<%= data[i].curp %>" class="btn btn-success" >ACTUALIZAR STATUS</a>
+                                    <a  href= "/CRUD_admin/deleteAlumno/<%= data[i].curp %>" class="btn btn-danger" >ELIMINAR</a>
                                 </td>
                             </tr>
                         <% } %>
                     <% } %>
+                    <a  href= "/admin/inicio" class="btn btn-outline-secondary btn-lg mt-5 mx-3" >REGRESAR</a>
                 </tbody>
             </table>
         </div>

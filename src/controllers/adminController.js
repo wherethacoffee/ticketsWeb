@@ -58,6 +58,20 @@ controller.eliminar = (req, res) => {
     })
 }
 
+controller.eliminarAlumno = (req, res) => {
+    const { curp } = req.params;
+
+    req.getConnection((err, conn) => {
+        conn.query('DELETE FROM alumno WHERE curp = ?', [curp], (err, rows) => {
+            if (err) {
+                res.json(err);
+            } else {
+                res.redirect('/CRUD_admin/listarAgendados');
+            }
+        });
+    })
+}
+
 controller.listar = (req, res) => {
     req.getConnection((err, conn) => {
         conn.query('SELECT * FROM admin', (err, admins) => {
@@ -87,6 +101,30 @@ controller.listarAgendados = (req, res) => {
     });
 }
 
+controller.listaEdicion = (req, res) => {
+    const { curp } = req.params;
+    data = req.body
+
+    req.getConnection((err, conn) => {
+        query = `
+        SELECT alumno.*, municipio.nombremunicipio 
+        FROM alumno
+        INNER JOIN municipio ON alumno.idmunicipio = municipio.idmunicipio 
+        WHERE alumno.curp = ?
+        `;
+        conn.query(query, [curp], (err, agendados) => {
+            if (err) {
+                res.json(err);
+            } else {
+                console.log(agendados);
+                const resultado = agendados[0];
+                res.render("citasEditar", {resultado})
+            }
+        })
+    });
+}
+
+
 controller.actualizarStatus = (req, res) => {
     const { curp } = req.params;
 
@@ -104,6 +142,27 @@ controller.actualizarStatus = (req, res) => {
         }
     });
 }
+
+
+controller.actualizarCompleto = (req, res) => {
+    const { curp } = req.params;
+    const data = req.body;
+
+    req.getConnection((err, conn) => {
+        if (err) {
+            res.json(err);
+        } else {
+            conn.query('UPDATE alumno SET ? WHERE curp = ?', [ data , data.curp], (err, rows) => {
+                if (err) {
+                    res.json(err);
+                } else {
+                    res.redirect('/CRUD_admin/listarAgendados')
+                }
+            });
+        }
+    });
+}
+
 
 controller.eliminarAgendado = (req, res) => {
     const { curp } = req.params;
