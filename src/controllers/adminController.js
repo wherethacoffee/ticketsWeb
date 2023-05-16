@@ -156,7 +156,7 @@ controller.actualizarCompleto = (req, res) => {
                 if (err) {
                     res.json(err);
                 } else {
-                    res.redirect('/CRUD_admin/listarAgendados')
+                    res.redirect('/')
                 }
             });
         }

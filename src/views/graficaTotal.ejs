@@ -21,7 +21,7 @@
             var myChart = new Chart(ctx, {
                 type: 'pie',
                 data: {
-                    labels: ['Realizado', 'Pendiente'],
+                    labels: ['Pendiente', 'Realizado'],
                     datasets: [{
                         label: 'Status',
                         data: <%= JSON.stringify(data) %>,
