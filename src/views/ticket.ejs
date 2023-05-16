@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="card-title">Ticket</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="turno">Turno:</label>
+                            <p id="turno"> <%= ticket.turno %> </p>
+                        </div>
+                        <div class="form-group">
+                            <label for="curp">CURP:</label>
+                            <p id="curp"> <%= ticket.curp %> </p>
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <p id="nombre"> <%= ticket.nombre %> <%= ticket.materno %> <%= ticket.paterno %></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="asunto">Asunto:</label>
+                            <p id="asunto"><%= ticket.asunto %></p>
+                        </div>
+                        
+                        <a href="/alumno/inicio" class = "btn btn-outline-secondary btn-lg mt-5 mx-3">Regresar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

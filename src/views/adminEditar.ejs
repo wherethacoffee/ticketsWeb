@@ -12,37 +12,31 @@
 
 <div class="container mt-5">
     <div class="row">
-<div class=" col-md-5 card border-secondary offset-md-3 mb-5" style="max-width: 40rem;">
-    
-    <div class="card-body">
-        <form action="/CRUD_admin/update/<%= data.idusuario %>" method="post">
-            <h4 class="card-title">Actualiza tus datos</h4>
-            <label for="usuario" class="form-label mt-4">Usuario</label>
-            <input
-            type="text"
-            name="usuario"
-            value="<%= data.usuario %>"
-            placeholder="Usuario"
-            class="form-control mb-3"
-            autofocus
-            />
-
-            <label for="usuario" class="form-label mt-4">Contraseña</label>
-            <input
-            type="pwd"
-            name="contrasena"
-            value="<%= data.contrasena%>"
-            placeholder="Contraseña"
-            class="form-control mb-3"
-            />
-    
-            <button type="submit" class="btn btn-outline-success btn-lg mt-5">
-                Actualizar usuario
-            </button>
-    </div>
-</div>
+        <div class="col-md-5 offset-md-3 card bg-dark">
+            <div class="card-body">
+                <form action="/CRUD_admin/update/<%= data.idusuario %>" method="post">
+                    <input
+                    type="text"
+                    name="usuario"
+                    value="<%= data.usuario %>"
+                    placeholder="Usuario"
+                    class="form-control mb-3"
+                    autofocus
+                    />
+                    <input
+                    type="pwd"
+                    name="contrasena"
+                    value="<%= data.contrasena%>"
+                    placeholder="Contraseña"
+                    class="form-control mb-3"
+                    />
+                    <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
  
 </body>
 </html>
+

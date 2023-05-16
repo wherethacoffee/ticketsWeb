@@ -13,6 +13,8 @@ const adminRoutes = require('./routes/adminRoutes');
 const adminIndexRoutes = require('./routes/adminIndexRoutes');
 const alumnoRoutes = require('./routes/alumnoRoutes');
 const municipioRoutes = require('./routes/municipioRoutes');
+const ticketRoutes = require('./routes/ticketRoutes');
+
 
 //Settings
 app.set('port', process.env.PORT || 3000);
@@ -45,6 +47,8 @@ app.use('/admin', adminIndexRoutes);
 app.use('/municipio', municipioRoutes);
 app.use('/alumno', alumnoRoutes);
 app.use('/CRUD_admin', adminRoutes);
+app.use('/ticket', ticketRoutes);
+
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname, 'public')));

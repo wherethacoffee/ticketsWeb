@@ -49,11 +49,6 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="status" class="form-label mt-4">Status</label>
-                            <input type="text" name="status" class="form-control" placeholder="status">
-                        </div>
-
-                        <div class="form-group">
                             <label for="nivel" class="form-label mt-4">Nivel</label>
                             <select class="form-select" name="nivel" id="nivel">
                                 <option>Seleccione</option>
@@ -76,7 +71,7 @@
                     <select class="form-select" id="idmunicipio" name="idmunicipio">
                         <% if (data) { %>
                             <% for (var i = 0; i < data.length; i++) { %>
-                                <option value = "<%= data[i].id %>"> <%= data[i].nombremunicipio %> </option>
+                                <option value = '<%= data[i].idmunicipio %>'> <%= data[i].nombremunicipio %> </option>
                             <% } %>
                         <% } %>
                     </select>
@@ -86,13 +81,11 @@
                                 Guardar 
                             </button>
 
-                            <button type="submit" class="btn btn-light btn-lg mt-5 mr-3">
-                                modificar 
-                            </button>
-
-                            <button type="reset" class="btn btn-outline-light btn-lg mt-5 ml-3 mx-3">
+                            <button type="reset" class="btn btn-light btn-lg mt-5 ml-3">
                                 limpiar
                             </button>   
+
+                            <a href="/" class = "btn btn-outline-secondary btn-lg mt-5 mx-3">Regresar</a>
                     </form>
                 </div>
                 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

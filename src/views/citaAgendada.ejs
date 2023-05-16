@@ -2,12 +2,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Gestor Admin</title>
+        <title>Citas agendadas</title>
         <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a href="/" class="navbar-brand" style="margin-left: 20px;">Gestor de Administradores</a> 
+            <a href="/" class="navbar-brand" style="margin-left: 20px;">Citas agendadas</a> 
         </nav>
 <div class="container"> 
     <div class="row mt-5 ">
@@ -43,15 +43,17 @@
                                 <td> <%= data[i].asunto %> </td>
                                 <td> <%= data[i].turno %> </td>
                                 <td> <%= data[i].status %> </td>
-                                <td> <%= data[i].nombremunicipio %> </td>
+                                <td> <%= data[i].nombre_municipio %> </td>
                                 <td> 
-                                    <a  href= "/CRUD_admin/actualizarStatus/<%= data[i].curp %>" class="btn btn-success" >ACTUALIZAR STATUS</a>
-                                    <a  href= "/CRUD_admin/deleteAlumno/<%= data[i].curp %>" class="btn btn-danger" >ELIMINAR</a>
+                                    <a  href= "/CRUD_admin/actualizar/<%= data[i].curp %>" class="btn btn-success" >ACTUALIZAR STATUS</a>
                                 </td>
                             </tr>
                         <% } %>
-                    <% } %>
-                    <a  href= "/admin/inicio" class="btn btn-outline-secondary btn-lg mt-5 mx-3" >REGRESAR</a>
+                    <% } else {%>
+                        <h1>Sin datos</h1>
+                    <% } %>  
+                    <a  href= "/toCurp" class="btn btn-outline-secondary btn-lg mt-5 mx-3" >REGRESAR</a>
+
                 </tbody>
             </table>
         </div>

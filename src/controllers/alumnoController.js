@@ -1,41 +1,79 @@
 const controller = {}
 
 controller.inicio = (req, res) => {
-    res.render('formAgendar')
+    req.getConnection((err, conn) => {
+        conn.query('SELECT * FROM municipio', (err, admins) => {
+            if (err) {
+                res.json(err);
+            }
+            res.render('formAgendar', {
+                data: admins
+            });
+        });
+    })
 }
 
 controller.agregar = (req, res) => {
     const data = req.body;
     
+    const values = [
+        data.curp,
+        data.nombre,
+        data.paterno,
+        data.materno,
+        data.telefono,
+        data.correo,
+        data.nivel,
+        data.asunto,
+        data.idmunicipio,
+        data.idmunicipio
+        ]
+
     // Validar la CURP antes de insertarla en la base de datos
     if (!validarCURP(data.curp)) {
-        res.render('formAgendar', {
-            alert: true,
-            alertTitle: 'ERROR',
-            alertMessage: 'CURP NO VALIDA',
-            alertIcon: 'error',
-            timer: 1500,
-            ruta: 'alumno/inicio'
-
-        })
-    return;
+        res.status(400).send('La CURP no es válida');
+        return;
     }
 
     req.getConnection((err, conn) => {
-        conn.query('INSERT INTO alumno set ?', [data], (err, alumno) => {
+        const sql = `
+    INSERT INTO alumno (curp, nombre, paterno, materno, telefono, correo, nivel, asunto, turno, idmunicipio)
+    SELECT 
+    ? as curp, 
+    ? as nombre, 
+    ? as paterno, 
+    ? as materno, 
+    ? as telefono, 
+    ? as correo,
+    ? as nivel, 
+    ? as asunto, 
+    (SELECT IFNULL(MAX(turno), 0) + 1 FROM alumno WHERE idmunicipio = ?) as turno,
+    ? as idmunicipio;
+`;
+
+    conn.query(sql, values, (err, result) => {
+    if (err) {
+        res.json(err);
+    } else {
+        res.redirect('/ticket/inicio/' + data.curp);
+    }
+});
+    })
+}
+
+controller.listarCitas = (req, res) => {
+    const { curp } = req.params;
+    console.log(curp);
+
+    req.getConnection((err, conn) => {
+        conn.query('SELECT alumno.*, municipio.nombremunicipio as nombre_municipio FROM alumno '+
+        'JOIN municipio ON alumno.idmunicipio = municipio.idmunicipio WHERE curp = ?', [curp], (err, citas) => {
             if (err) {
                 res.json(err);
-            } else {
-                res.render('formAgendar', {
-                    alert: true,
-                    alertTitle: 'EXITO',
-                    alertMessage: 'REGISTRO COMPLETADO',
-                    alertIcon: 'success',
-                    showconfirmationbutton: false,
-                    timer: 1500,
-                    ruta: 'alumno/inicio'
-                }
-        )}
+            }
+            res.render('citaAgendada', {
+                data: citas
+            });
         });
     })
 }
@@ -43,10 +81,10 @@ controller.agregar = (req, res) => {
 
 function validarCURP(curp) {
     // Expresión regular para validar una CURP
-    const curpRegex = /^[A-Z]{4}[0-9]{6}[HM][A-Z]{5}[0-9]{2}$/;
+    const curpRegex = /^[A-Z]{4}[0-9]{6}[HM][A-Z]{5}[A-Za-z0-9]{2}$/;
     return curpRegex.test(curp);
-}
 
+}
 
 
 
