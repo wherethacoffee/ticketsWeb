@@ -3,17 +3,19 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to bottom, #e66465, #9198e5);
+  background-color: #2c0830;
 }
+
 .login-container {
-  width: 600px; /* Aumenta el ancho del contenedor */
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
-  margin-top: 10px; /* Ajusta la distancia desde la parte superior */
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 10px;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: linear-gradient(to bottom, #4a90e2, #ffffff);
+  border: 10px solid #22b5ba; /* Ajusta el grosor del borde según tus necesidades */
+  border-radius: 50px;
+  background-color: #ffffff;
 }
+
 
 h2 {
   text-align: center;
@@ -23,7 +25,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh; /* Ajusta la altura según tus necesidades */
+  height: 15vh; /* Ajusta la altura según tus necesidades */
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
@@ -36,7 +38,7 @@ h2 {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
-  background-color: #151e3f;
+  background-color: #2c0830;
   font-size: large;
 }
 
@@ -45,25 +47,31 @@ h2 {
 }
 
 .contenedor {
-  display: flex;
-  height: 100vh;
-  gap: 25px;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  height: 90vh;
   align-items: center;
+  justify-items: center;
 }
 
 .btn {
   position: relative;
-  padding: 70px 200px;
+  padding: 70px 0;
   text-decoration: none;
   color: #fff;
   letter-spacing: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  margin-left: 120px;
+  margin-right: 120px;
+  text-align: center; /* Agrega esta propiedad para centrar el texto */
 }
 
 .btn-1 {
   overflow: hidden;
-  border: 3px solid #03cc57;
+  border: 3px solid #33c8d0;
   z-index: 1;
 }
 .btn-1::before {
@@ -73,7 +81,7 @@ h2 {
   height: 200%;
   left: 0;
   top: -200%;
-  background-color: #03cc57;
+  background-color: #33c8d0;
   border-radius: 50%;
   transition: all 0.6s ease;
   z-index: -1;

@@ -20,32 +20,32 @@
                     <form action="/alumno/add" method="POST">
                         <div class="form-group">
                             <label for="curp" class="form-label mt-4">Curp</label>
-                            <input type="text" name="curp" class="form-control"  placeholder="Ingresa CURP">
+                            <input type="text" name="curp" class="form-control"  placeholder="Ingresa CURP" required>
                         </div>
 
                         <div class="form-group">
                             <label for="nombre" class="form-label mt-4">Nombre</label>
-                            <input type="text" name="nombre" class="form-control"  placeholder="Ingresa Nombre">
+                            <input type="text" name="nombre" class="form-control"  placeholder="Ingresa Nombre" required>
                         </div>
 
                         <div class="form-group">
                             <label for="paterno" class="form-label mt-4">Paterno</label>
-                            <input type="text" name="paterno" class="form-control"  placeholder="Ingresa Paterno">
+                            <input type="text" name="paterno" class="form-control"  placeholder="Ingresa Paterno" required>
                         </div>
 
                         <div class="form-group">
                             <label for="materno" class="form-label mt-4">Materno</label>
-                            <input type="text" name="materno" class="form-control"  placeholder="Ingresa Materno">
+                            <input type="text" name="materno" class="form-control"  placeholder="Ingresa Materno" required>
                         </div>
 
                         <div class="form-group">
                             <label for="telefono" class="form-label mt-4">Telefono</label>
-                            <input type="text" name="telefono" class="form-control" placeholder="ingresa telefono">
+                            <input type="text" name="telefono" class="form-control" placeholder="ingresa telefono" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="correo" class="form-label mt-4">correo</label>
-                            <input type="text" name="correo" class="form-control" placeholder="ingresa Correo">
+                            <label for="correo" class="form-label mt-4">Correo electrónico</label>
+                            <input type="text" name="correo" class="form-control" placeholder="ingresa Correo" required>
                         </div>
 
                         <div class="form-group">
@@ -54,6 +54,8 @@
                                 <option>Seleccione</option>
                                 <option>Primaria</option>
                                 <option>Secundaria</option>
+                                <option>Bachillerato</option>
+                                <option>Universidad</option>
                             </select>
                         </div>
 
@@ -62,7 +64,8 @@
                         <select class="form-select" name="asunto" id="asunto">
                             <option>Seleccione</option>
                             <option>Entrega de papeleria</option>
-                            <option>solicitud de cita</option>
+                            <option>Solicitud de cita</option>
+                            <option>Revisión</option>
                         </select>
                     </div>
 
@@ -81,7 +84,7 @@
                                 Guardar 
                             </button>
 
-                            <button type="reset" class="btn btn-light btn-lg mt-5 ml-3">
+                            <button type="reset" class="btn btn-outline-light btn-lg mt-5 ml-3">
                                 limpiar
                             </button>   
 

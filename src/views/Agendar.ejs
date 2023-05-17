@@ -2,23 +2,23 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Gestor Admin</title>
+        <title>Agenda de citas</title>
         <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a href="/" class="navbar-brand" style="margin-left: 20px;">Gestor de Administradores</a> 
+            <a href="/" class="navbar-brand" style="margin-left: 20px;">Agenda de Citas</a> 
         </nav>
 <div class="container"> 
     <div class="row mt-5 ">
         <div class="col-md-7">
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover mt-4">
                 <thead>
                     <th>N°</th>
                     <th>CURP</th>
                     <th>Nombre</th>
-                    <th>Apellido Paterno</th>
-                    <th>Apellido Materno</th>
+                    <th> Paterno</th>
+                    <th> Materno</th>
                     <th>Telefono</th>
                     <th>Correo</th>
                     <th>Nivel</th>
@@ -45,15 +45,16 @@
                                 <td> <%= data[i].status %> </td>
                                 <td> <%= data[i].nombremunicipio %> </td>
                                 <td> 
-                                    <a  href= "/CRUD_admin/actualizarStatus/<%= data[i].curp %>" class="btn btn-success" >ACTUALIZAR STATUS</a>
-                                    <a  href= "/CRUD_admin/deleteAlumno/<%= data[i].curp %>" class="btn btn-danger" >ELIMINAR</a>
+                                    <a  href= "/CRUD_admin/actualizarStatus/<%= data[i].curp %>" class="btn btn-outline-success mx-2 " >ACTUALIZAR</a>
+                                    <a  href= "/CRUD_admin/deleteAlumno/<%= data[i].curp %>" class="btn btn-outline-danger mx-2 mt-2" >ELIMINAR</a>
                                 </td>
                             </tr>
                         <% } %>
                     <% } %>
-                    <a  href= "/admin/inicio" class="btn btn-outline-secondary btn-lg mt-5 mx-3" >REGRESAR</a>
+                    <a  href= "/admin/inicio" class="btn btn-outline-secondary btn-lg mt-2 mx-3" >Regresar</a>
                 </tbody>
             </table>
+            
         </div>
 </body>
 </html>

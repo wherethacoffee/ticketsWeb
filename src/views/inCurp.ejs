@@ -2,29 +2,32 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Agendar</title>
+        <title>Consultar</title>
         <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a href="/" class="navbar-brand" style="margin-left: 20px;">Grafico del total de status por municipio</a> 
+            <a href="/" class="navbar-brand" style="margin-left: 20px;">Consultar mi cita</a> 
         </nav>
 
-        <div class="col-md-8">
-            <h1>Ingresa la CURP donde registraste tu cita</h1>
-            <div class="card">
-                <div class ="card-body">
-                    <form action="/validarCURP" method="POST">
-                        <div class="form-group">
-                            <label for="curp" class="form-label mt-4">Curp</label>
-                            <input type="text" name="curp" class="form-control" placeholder="Ingresa CURP" required>
-                        </div>
-                        <button type="submit" class="btn btn-outline-success mt-2 mx-2">Enviar</button>
-                        <a  href= "/" class="btn btn-outline-secondary mt-2 mx-2" >REGRESAR</a>
-                    </form>
-
+        <div class="container mt-5">
+            <div class="row">
+                <div class=" col-md-7 card border-secondary offset-md-2 mb-5" style="max-width: 80rem;">
+                    
+                    <div class="card-body">
+                        <h4>Ingresa la CURP con la que registraste tu cita</h4>
+                        <form action="/validarCURP" method="POST">
+                            <div class="form-group">
+                                <label for="curp" class="form-label mt-4">Curp</label>
+                                <input type="text" name="curp" class="form-control" placeholder="Ingresa CURP" required>
+                            </div>
+                            <button type="submit" class="btn btn-outline-success mt-2 mx-2">Enviar</button>
+                            <a  href= "/" class="btn btn-outline-secondary mt-2 mx-2" >Regresar</a>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </body>
 </html>
+

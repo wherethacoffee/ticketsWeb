@@ -18,7 +18,7 @@
           <table class="table table-bordered table-hover">
             <thead>
               <th>N°</th>
-              <th>Nombre</th>
+              <th>Municipio</th>
               <th>Acciones</th>
             </thead>
             <tbody>
@@ -44,10 +44,10 @@
             <div class="card-body">
               <form action="/municipio/add" method="POST">
                 <div class="form-group">
-                  <label for="usuario" class="form-label mt-4">Usuario</label>
-                  <input type="text" name="nombremunicipio" placeholder="Nombre de municipio" class="form-control">
+                  <label for="usuario" class="form-label mt-4">Nombre</label>
+                  <input type="text" name="nombremunicipio" placeholder="Nombre de municipio" class="form-control" required>
                 </div>
-                <button type="reset" class="btn btn-outline-light btn-lg mt-5">
+                <button type="submit" class="btn btn-outline-light btn-lg mt-5">
                   Guardar municipio
                 </button>
 

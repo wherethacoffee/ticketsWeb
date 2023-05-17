@@ -2,18 +2,20 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Tickets web</title>
-        <link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
+        <title>Citas</title>
+        <link rel="stylesheet" href="https://bootswatch.com/5/vapor/bootstrap.min.css">
     </head>
     <body>
-        <nav class="navbar navbar-dark bg-dark">
-            <a href="../" class="navbar-brand">Gestor admin</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a href="/" class="navbar-brand" style="margin-left: 20px;">Editar cita</a> 
         </nav>
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-5 offset-md-3 card bg-dark">
+        <div class=" col-md-7 card border-secondary offset-md-2 mb-5" style="max-width: 80rem;">
             <div class="card-body">
                 <form action="/CRUD_admin/updateall" method="post">
+                    <h4 class="card-title">Actualiza tu información</h4>
+                    <label for="cdatos personales" class="form-label mt-4">CURP</label>
                     <input
                     type="text"
                     name="curp"
@@ -22,6 +24,7 @@
                     class="form-control mb-3"
                     autofocus
                     />
+                    <label for="cdatos personales" class="form-label mt-4">Nombre</label>
                     <input
                     type="text"
                     name="nombre"
@@ -29,6 +32,7 @@
                     placeholder="Nombre"
                     class="form-control mb-3"
                     />
+                    <label for="cdatos personales" class="form-label mt-4"> Apellido paterno</label>
                     <input
                     type="text"
                     name="paterno"
@@ -37,6 +41,7 @@
                     class="form-control mb-3"
                     autofocus
                     />
+                    <label for="cdatos personales" class="form-label mt-4">Apellido Materno</label>
                     <input
                     type="text"
                     name="materno"
@@ -45,6 +50,7 @@
                     class="form-control mb-3"
                     autofocus
                     />
+                    <label for="cdatos personales" class="form-label mt-4">Teléfono</label>
                     <input
                     type="text"
                     name="telefono"
@@ -53,6 +59,7 @@
                     class="form-control mb-3"
                     autofocus
                     />
+                    <label for="cdatos personales" class="form-label mt-4">Correo electónico</label>
                     <input
                     type="text"
                     name="correo"
@@ -63,21 +70,26 @@
                     />
                     <label for="nivel" class="form-label mt-4">Nivel</label>
                         <select class="form-select" name="nivel" id="nivel">
-                            <option>Seleccion</option>
+                            <option>Seleccione</option>
                             <option>Primaria</option>
                             <option>Secundaria</option>
+                            <option>Bachillerato</option>
+                                <option>Universidad</option>
                         </select>
                     <label for="asunto" class="form-label mt-4">Asunto</label>
                         <select class="form-select" name="asunto" id="asunto">
                             <option>Seleccione</option>
                             <option>Entrega de papeleria</option>
                             <option>Solicitud de cita</option>
+                            <option>Revisión</option>
                         </select>
                     <label for="idmunicipio" class="form-label mt-4">Municipio</label>
                         <select class="form-select" name="idmunicipio" id="idmunicio">
                             <option value="<%= resultado.idmunicipio %>"><%= resultado.nombremunicipio %></option>
                         </select>
-                    <button type="submit" class="btn btn-primary">Guardar Usuario</button>
+                        <button type="submit" class="btn btn-outline-light btn-lg mt-5">
+                            Guardar usuario
+                        </button>
                 </form>
             </div>
         </div>
